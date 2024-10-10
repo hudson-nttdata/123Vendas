@@ -1,5 +1,5 @@
 # 123 Vendas API
-![](https://raw.githubusercontent.com/hudson-nttdata/123Vendas/main/docs/github-thumb-readme-123-vendas.png?w=200)
+![](https://github.com/hudson-nttdata/123Vendas/blob/feature/vendas-api/docs/github-thumb-readme-123-vendas.png?raw=true?w=200)
 
 ## Descrição
 Este projeto é uma [API](https://pt.wikipedia.org/wiki/Interface_de_programa%C3%A7%C3%A3o_de_aplica%C3%A7%C3%B5es) de ([CRUD](https://pt.wikipedia.org/wiki/CRUD) completo) que manipula os registros de vendas. Foi construída usando .NET Core 8.
