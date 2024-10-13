@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace Venda.Application.Commands.Vendas.Criar
+namespace _123Vendas.Venda.Application.Commands.Vendas.Criar
 {
     // servico venda
     public class CriarVendaCommand : IRequest<Guid>

@@ -1,4 +1,9 @@
-namespace Venda.Application.Commands.Services
+using _123Vendas.Venda.Application.Commands.Vendas.Criar;
+using _123Vendas.Venda.Infrastructure.Data;
+using _123Vendas.Venda.Domain.Entities.Vendas;
+using MediatR;
+
+namespace _123Vendas.Venda.Application.Services
 {
     public class VendaService
     {
@@ -13,7 +18,7 @@ namespace Venda.Application.Commands.Services
 
         public async Task<Guid> CriarVendaAsync(CriarVendaCommand command)
         {
-            var venda = new Venda.Domain.Entities.Venda
+            var venda = new OrdemVenda
             {
                 Id = Guid.NewGuid(),
                 Numero = command.Numero,
@@ -34,8 +39,8 @@ namespace Venda.Application.Commands.Services
             await _context.SaveChangesAsync();
 
             // Publicar o evento
-            var evento = new CompraCriadaEvent(venda.Id);
-            await _mediator.Publish(evento);
+            //var evento = new CompraCriadaEvent(venda.Id);
+            //await _mediator.Publish(evento);
 
             return venda.Id;
         }
