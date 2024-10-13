@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.VendaAPI", "123Ve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.Venda.Domain", "123Vendas.Venda.Domain\123Vendas.Venda.Domain.csproj", "{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.Venda.Application", "123Vendas.Venda.Application\123Vendas.Venda.Application.csproj", "{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
