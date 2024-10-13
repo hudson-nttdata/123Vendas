@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.Venda.Domain", "1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.Venda.Application", "123Vendas.Venda.Application\123Vendas.Venda.Application.csproj", "{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.Venda.Infrastructure", "123Vendas.Venda.Infrastructure\123Vendas.Venda.Infrastructure.csproj", "{0841BCB6-AD1C-4C3E-B910-D370AC4A2164}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65D28CD1-7BE7-4EDD-875C-4612DB2EA18B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0841BCB6-AD1C-4C3E-B910-D370AC4A2164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0841BCB6-AD1C-4C3E-B910-D370AC4A2164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0841BCB6-AD1C-4C3E-B910-D370AC4A2164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0841BCB6-AD1C-4C3E-B910-D370AC4A2164}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
