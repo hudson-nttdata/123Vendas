@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.VendaAPI", "123Vendas.VendaApi\123Vendas.VendaAPI.csproj", "{E94B1E81-CFFD-48F2-9119-2D4B1116CACE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "123Vendas.Venda.Domain", "123Vendas.Venda.Domain\123Vendas.Venda.Domain.csproj", "{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{E94B1E81-CFFD-48F2-9119-2D4B1116CACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E94B1E81-CFFD-48F2-9119-2D4B1116CACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E94B1E81-CFFD-48F2-9119-2D4B1116CACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F9DEA6-B98B-4DDE-BB18-E0BAC93C8998}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
