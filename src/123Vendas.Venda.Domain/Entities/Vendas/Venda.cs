@@ -1,5 +1,8 @@
 namespace Venda.Domain.Entities
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Venda
     {
         public Guid Id { get; set; }
@@ -21,6 +24,6 @@ namespace Venda.Domain.Entities
         public int Quantidade { get; set; }
         public decimal ValorUnitario { get; set; }
         public decimal Desconto { get; set; }
-        public decimal ValorVenda => (Quantidade * ValorUnitario) - Desconto;
+        public decimal ValorTotal => (Quantidade * ValorUnitario) - Desconto;
     }
 }
