@@ -3,24 +3,26 @@ namespace _123Vendas.Venda.Domain.Entities.Vendas
     public class OrdemVenda
     {
         public Guid Id { get; set; }
-        public string Numero { get; set; }
+        public string NumeroVenda { get; set; }
         public DateTime DataVenda { get; set; }
-        // referencia entidade Cliente, usando padrao 'External Identities'
         public Guid ClienteId { get; set; }
-        public decimal ValorTotal { get; set; }
-        // referencia entidade Filial, usando padrao 'External Identities'
+        public decimal ValorTotalVenda { get; set; }
         public Guid FilialId { get; set; }
-        public List<ItemVenda> Itens { get; set; }
-        public bool Cancelado { get; set; }
+        public List<VendaItem> Itens { get; set; }
+        public bool VendaCancelada { get; set; }
+
+        public OrdemVenda()
+        {
+            Itens = new List<VendaItem>();
+        }
     }
 
-    public class ItemVenda
+    public class VendaItem
     {
-        // referencia entidade Produto, usando padrao 'External Identities'
-        public Guid ProdutoId { get; set; }
+        public Guid ItemId { get; set; }
         public int Quantidade { get; set; }
         public decimal ValorUnitario { get; set; }
         public decimal Desconto { get; set; }
-        public decimal ValorTotal => Quantidade * ValorUnitario - Desconto;
+        public decimal Valor => Quantidade * ValorUnitario - Desconto;
     }
 }

@@ -1,50 +1,50 @@
-﻿using _123Vendas.Venda.Infrastructure.Data;
+﻿using _123Vendas.Venda.Infrastructure.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace _123Vendas.Venda.Infrastructure.Repositories
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
-        private readonly VendaContext context;
+        private readonly VendaDbContext _context;
 
-        public BaseRepository(VendaContext context)
+        public BaseRepository(VendaDbContext context)
         {
-            this.context = context;
+            this._context = context;
         }
 
         public async Task AddAsync(TEntity entity)
         {
             if (entity != null)
             {
-                await context.Set<TEntity>().AddAsync(entity);
+                await _context.Set<TEntity>().AddAsync(entity);
             }
         }
 
         public async Task DeleteAsync(TEntity entity)
         {
-            context.Set<TEntity>().Remove(entity);
-            await context.SaveChangesAsync();
+            _context.Set<TEntity>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await context.Set<TEntity>().ToListAsync();
+            return await _context.Set<TEntity>().ToListAsync();
         }
 
         public async Task<TEntity> GetByIdAsync(int? id)
         {
-            var entity = await context.Set<TEntity>().FindAsync(id);
+            var entity = await _context.Set<TEntity>().FindAsync(id);
             return entity!;
         }
         public async Task SaveChangesAsync()
         {
-            await context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
 
         public void UpdateAsync(TEntity entity)
         {
-            context.Set<TEntity>().Update(entity);
+            _context.Set<TEntity>().Update(entity);
         }
     }
 }

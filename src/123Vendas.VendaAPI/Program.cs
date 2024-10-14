@@ -1,4 +1,4 @@
-using _123Vendas.Venda.Infrastructure.Data;
+using _123Vendas.Venda.Infrastructure.Data.Contexts;
 using _123Vendas.VendaAPI.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -16,8 +16,8 @@ try
         .CreateLogger();
 
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    builder.Services.AddDbContext<VendaContext>(options =>
-        options.UseNpgsql(connectionString).EnableSensitiveDataLogging());
+    builder.Services.AddDbContext<VendaDbContext>(options =>
+    options.UseInMemoryDatabase(connectionString).EnableSensitiveDataLogging());
 
     builder.Host.UseSerilog(logger);
     builder.Services.AddMediatRApi();

@@ -22,10 +22,10 @@ namespace _123Vendas.Venda.Tests.Domain
             var valoTotal = quantidade * valorUnitario - desconto;
 
             // Act
-            var itens = new List<ItemVenda>
+            var itens = new List<VendaItem>
             {
                 new() {
-                    ProdutoId = productId,
+                    ItemId = productId,
                     Quantidade = quantidade,
                     ValorUnitario = valorUnitario,
                     Desconto = desconto
@@ -35,10 +35,10 @@ namespace _123Vendas.Venda.Tests.Domain
             var venda = new OrdemVenda
             {
                 Id = id,
-                Numero = numero,
+                NumeroVenda = numero,
                 DataVenda = dataVenda,
                 ClienteId = clienteId,
-                ValorTotal = valorTotal,
+                ValorTotalVenda = valorTotal,
                 FilialId = filialId,
                 Itens = itens
             };
@@ -46,10 +46,10 @@ namespace _123Vendas.Venda.Tests.Domain
 
             // Assert
             Assert.Equal(id, venda.Id);
-            Assert.Equal(numero, venda.Numero);
+            Assert.Equal(numero, venda.NumeroVenda);
             Assert.Equal(dataVenda, venda.DataVenda);
             Assert.Equal(clienteId, venda.ClienteId);
-            Assert.False(venda.Cancelado);
+            Assert.False(venda.VendaCancelada);
         }
     }
 }
