@@ -8,16 +8,31 @@ namespace _123Vendas.Venda.Infrastructure.Data
         public VendaContext(DbContextOptions<VendaContext> options)
         : base(options) { }
 
+        public DbSet<OrdemVenda> OrdemVendas { get; set; }
+        public DbSet<ItemVenda> ItensVenda { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OrdemVenda>(entity =>
             {
                 entity.HasKey(v => v.Id);
-                entity.HasMany(v => v.Itens).WithOne().HasForeignKey("VendaId");
-            });
-        }
+                entity.Property(v => v.Numero).IsRequired();
+                entity.Property(v => v.DataVenda).IsRequired();
+                entity.Property(v => v.ValorTotal);
 
-        public DbSet<OrdemVenda> Vendas { get; set; }
-        public DbSet<ItemVenda> ItensVenda { get; set; }
+                entity.HasMany(v => v.Itens)
+                      .WithOne()
+                      .HasForeignKey("VendaId")
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<ItemVenda>(entity =>
+            {
+                entity.HasKey(i => i.ProdutoId);
+                entity.Property(i => i.ValorUnitario);
+                entity.Property(i => i.Desconto);
+            });
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 using _123Vendas.Venda.Application.Commands.Vendas.Criar;
-using _123Vendas.Venda.Infrastructure.Data;
 using _123Vendas.Venda.Domain.Entities.Vendas;
+using _123Vendas.Venda.Infrastructure.Data;
 using MediatR;
 
 namespace _123Vendas.Venda.Application.Services
@@ -10,7 +10,10 @@ namespace _123Vendas.Venda.Application.Services
         private readonly IMediator _mediator;
         private readonly VendaContext _context;
 
-        public VendaService(IMediator mediator, VendaContext context)
+        public VendaService(
+            IMediator mediator
+            , VendaContext context
+            )
         {
             _mediator = mediator;
             _context = context;
@@ -35,12 +38,12 @@ namespace _123Vendas.Venda.Application.Services
                 }).ToList()
             };
 
-            await _context.Vendas.AddAsync(venda);
+            await _context.OrdemVendas.AddAsync(venda);
             await _context.SaveChangesAsync();
 
-            // Publicar o evento
-            //var evento = new CompraCriadaEvent(venda.Id);
-            //await _mediator.Publish(evento);
+            // TODO: criar 'CompraCriadaEvent' para publicacao do evento
+            // var evento = new CompraCriadaEvent(venda.Id);
+            // await _mediator.Publish(evento);
 
             return venda.Id;
         }
